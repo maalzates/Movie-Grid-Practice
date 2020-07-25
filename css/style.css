@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
+:root {
+    --purple: indigo;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+h1, h2, h3, h4, p {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+/* LAYOUT */ 
+.container {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    grid-template-rows: 4rem repeat(11, 1fr);
+    height: 100vh;
+}
+
+.container .header {
+    background-color: white;
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 5rem repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    box-shadow: 0 0 5px #c1c1c1;
+}
+
+.container .sidebar {
+    background-color: lightcoral;
+    grid-column: 1/2;
+    grid-row: 2/-1;
+    display: grid;
+    grid-template-rows: 3rem repeat(3, 6rem) repeat(5, 1fr) 6rem 3rem;
+}
+
+.container .content {
+    grid-column: 2/-1;
+    grid-row: 2/-1;
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-template-rows: repeat(12, minmax(46px,1fr));
+    justify-content: space-around;
+    column-gap: 2rem;
+    margin: 0 2rem 2rem;   
+}
+
+/* HEADER EDITION */
+
+
+.container .header .logo { 
+grid-column: 2/5;
+grid-row: 1/-1;
+height: 100%;
+position: relative; /* para colocar img en absolute y posicionar la imagen donde debe estar*/
+}
+
+.container .header .input {
+    grid-column: 5/10;
+    grid-row: 1/-1;
+    height: 100%;
+    padding: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .header .nombre {
+    grid-column: 10/-1;
+    grid-row: 1/-1;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+}
+
+/* HEADER CONTENT*/
+
+.container .header .logo img {   /*  ---- LOGO -------*/
+    position: absolute;
+    height: 4rem;
+    left: -1em;
+}
+
+.container .header .input input {
+    width: 34rem;
+    height: 2rem;
+    border-radius: 5px;
+    border: 1px solid #c1c1c1;
+
+}
+.container .header .nombre .profile-name {
+    grid-column: 2/4;
+    display: grid;
+    justify-content: right;
+    align-items: center;
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+.container .header .nombre .foto {
+    grid-column: 4/5;
+    display: grid;
+    justify-content: left;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.container .header .nombre .foto .circulo {
+    height: 4rem;
+    width: 4rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.container .header .nombre .foto .circulo img {
+    height: 3.5rem;
+    width: 3.5rem;
+}
+.container .header .nombre .foto .flecha {
+    height: 4rem;
+    width: 4rem;
+    display: grid;
+    justify-content: left;
+    align-items: center;
+}
+.container .header .nombre .foto .flecha img {
+    height: 1rem;
+    width: 1.5rem;
+}
+/*  SIDEBAR EDITION */
+.container .sidebar > div[class^="i"] {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    display: grid;
+}
+
+.container .sidebar .i1 {
+    grid-row: 2/3;
+}
+
+.container .sidebar .i2 {
+    grid-row: 3/4;
+
+}
+
+.container .sidebar .i3 {
+    grid-row: 4/5;
+}
+
+.container .sidebar .i4 {
+    grid-row: 10/11;
+}
+
+/* --------------------- SIDE BAR CONTENT / ICONS / TITLES ---------------------*/
+
+.container .sidebar div[class^="i"] .icon-container {
+    grid-row: 1/3;
+    display: grid;
+    justify-content: center;
+    align-items: end;
+
+}
+.container .sidebar div[class^="i"] .icon-sub {
+    grid-row: 3/4;
+    display: grid;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+}
+
+
+.container .sidebar .icon {
+    height: 3rem;
+    width: 3rem;
+}
+
+
+/* CONETNT EDITION */
+.container .content div[class^=c] {
+    height: max-content;
+    background: url(../img/caratula.png) no-repeat center top;
+    /* height: 140.2px; */
+    width: 350px;
+}
+
+.container .content .tittle {
+    display: grid;
+    align-items: end;
+    padding: 0;
+    margin: 0;
+}
+.container .content .t1 {
+    grid-row: 1/2;
+    grid-column: 1/-1;  
+}
+
+.container .content .t2 {
+    grid-row: 5/6;
+    grid-column: 1/-1;
+
+}
+
+.container .content .t3 {
+    grid-row: 9/10;
+    grid-column: 1/-1;
+}
+
+.container .content .c2 {
+    grid-column: 1/2;
+    grid-row: 2/5;
+}
+
+.container .content .c3 {
+    grid-column: 2/3;
+    grid-row: 2/5;
+}
+
+.container .content .c4 {
+    grid-column: 3/4;
+    grid-row: 2/5;
+}
+
+.container .content .c6 {
+    grid-column: 1/2;
+    grid-row: 6/9;
+}
+.container .content .c7 {
+    grid-column: 2/3;
+    grid-row: 6/9;
+}
+
+.container .content .c8 {
+    grid-column: 3/4;
+    grid-row: 6/9;
+}
+
+.container .content .c10 {
+    grid-column: 1/2;
+    grid-row: 10/13;
+}
+
+.container .content .c11 {
+    grid-column: 2/3;
+    grid-row: 10/13;
+    background-color: var(--purple);
+}
+
+.container .content .c12 {
+    grid-column: 3/4;
+    grid-row: 10/13;
+    background-color: var(--purple);
+}
+
+/*-------------------------FILMS CONTAINERS TEXT ---------------------*/
+
+.container .content div[class^="c"] {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    box-shadow: 0 0 5px #616060;
+}
+
+.container .content div[class^="c"] .film-sub {
+    grid-row: 2/3;
+    background-color: rgba(235, 77, 103, 0.486);
+    color: white;
+}
+
+.container .content div[class^="c"] .film-sub h4 {
+    font-weight: 700;
+    padding: 1rem;
+}
+.container .content div[class^="c"] .film-sub p {
+    padding: 0 1rem;
+}
